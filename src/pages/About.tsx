@@ -14,9 +14,12 @@ import {
     IconArrowRight,
     IconBrandTelegram,
     IconBrandGithub,
-    IconCookie,
-    IconGauge,
-    IconUser
+    IconServer,
+    IconRoute,
+    IconFilter,
+    IconFileCode,
+    IconHierarchy,
+    IconToggleRight
 } from '@tabler/icons-react'
 import { NetworkBackground } from '../components'
 import { useLang } from '../contexts'
@@ -35,9 +38,10 @@ const About: React.FC = () => {
                     <Center mb="md">
                         <Title ta='center'>
                             {t('pages.About.project') + ' '}
-                            <Text component="span" c="blue" inherit>
-                                «Magitrickle WUI»
+                            «<Text component="span" c="blue" inherit>
+                                MagiTrickle
                             </Text>
+                            »
                         </Title>
                     </Center>
 
@@ -69,7 +73,7 @@ const About: React.FC = () => {
                             leftSection={<IconBrandGithub size={20} />}
                             rightSection={<IconArrowRight size={14} />}
                             component="a"
-                            href="https://github.com/dan0102dan/magitrickle-wui"
+                            href="https://github.com/MagiTrickle/MagiTrickle"
                             target="_blank"
                             size='md'
                         >
@@ -97,22 +101,34 @@ const About: React.FC = () => {
                 <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
                     {[
                         {
-                            title: 'Экстремальная производительность',
-                            description:
-                                'Наш продукт обеспечивает невероятную скорость работы, позволяя обрабатывать большие нагрузки без потерь в качестве. Благодаря оптимизированному коду и современным технологиям, ваша сеть всегда на высоте.',
-                            icon: IconGauge,
+                            title: t('pages.About.noDnsOverride.title'),
+                            description: t('pages.About.noDnsOverride.description'),
+                            icon: IconServer,
                         },
                         {
-                            title: 'Защита и приватность',
-                            description:
-                                'Уделяем максимальное внимание безопасности данных. Наша система использует последние шифровальные алгоритмы, что гарантирует защиту от посторонних вмешательств и утечек информации.',
-                            icon: IconUser,
+                            title: t('pages.About.universalTunnelSupport.title'),
+                            description: t('pages.About.universalTunnelSupport.description'),
+                            icon: IconRoute,
                         },
                         {
-                            title: 'Без сторонних сервисов',
-                            description:
-                                'Все вычисления и процессы выполняются локально, без привлечения сторонних сервисов. Это позволяет избежать дополнительных рисков и обеспечить полное соответствие требованиям конфиденциальности.',
-                            icon: IconCookie,
+                            title: t('pages.About.adaptiveFiltering.title'),
+                            description: t('pages.About.adaptiveFiltering.description'),
+                            icon: IconFilter,
+                        },
+                        {
+                            title: t('pages.About.unifiedConfiguration.title'),
+                            description: t('pages.About.unifiedConfiguration.description'),
+                            icon: IconFileCode,
+                        },
+                        {
+                            title: t('pages.About.networkSegmentation.title'),
+                            description: t('pages.About.networkSegmentation.description'),
+                            icon: IconHierarchy,
+                        },
+                        {
+                            title: t('pages.About.instantActivation.title'),
+                            description: t('pages.About.instantActivation.description'),
+                            icon: IconToggleRight
                         },
                     ].map((feature) => (
                         <Card key={feature.title} shadow="md" radius="md" padding="xl">

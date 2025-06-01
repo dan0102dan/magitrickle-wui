@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react'
-import { ja, en, fr, ge, sp, po, ru, ch } from './translations'
+import { en, ru } from './translations'
 
-const translations = { ja, en, fr, ge, sp, po, ru, ch }
+const translations = { en, ru }
 
 export type Lang = keyof typeof translations
 export const availableTranslations = Object.keys(translations) as Array<Lang>
