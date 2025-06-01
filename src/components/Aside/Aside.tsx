@@ -7,12 +7,15 @@ import {
     useMantineColorScheme,
     MantineColorScheme,
     Stack,
-    Button,
+    // Button,
     Group,
     Flex,
 } from '@mantine/core'
-import { showNotification } from '@mantine/notifications'
-import { IconRefresh, IconRocket } from '@tabler/icons-react'
+// import { showNotification } from '@mantine/notifications'
+import {
+    // IconRefresh,
+    IconRocket
+} from '@tabler/icons-react'
 import packageJson from '../../../package.json'
 import { useLang, availableTranslations, Lang } from '../../contexts'
 import { getLatestReleaseVersion } from '../../api/githubApi'

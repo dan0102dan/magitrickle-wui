@@ -18,11 +18,11 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
         .map((route) => (
             <NavLink
                 className={classes.textWrap}
-                key={route.label}
+                key={route.path}
                 component={RouterNavLink}
                 to={route.path}
                 label={t(`pages.${route.label}._`)}
-                leftSection={<route.icon size={20} stroke={1.5} />}
+                leftSection={route.icon && <route.icon size={20} stroke={1.5} />}
                 active={route.path === location.pathname}
                 onClick={toggle}
                 variant="light"
