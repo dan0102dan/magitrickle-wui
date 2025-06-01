@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/kvas-wui/static/css/main.e734101f.css",
-    "main.js": "/kvas-wui/static/js/main.2e497e51.js",
-    "index.html": "/kvas-wui/index.html"
+    "main.css": "/magitrickle-wui/static/css/main.55be491f.css",
+    "main.js": "/magitrickle-wui/static/js/main.8d835d5e.js",
+    "index.html": "/magitrickle-wui/index.html"
   },
   "entrypoints": [
-    "static/css/main.e734101f.css",
-    "static/js/main.2e497e51.js"
+    "static/css/main.55be491f.css",
+    "static/js/main.8d835d5e.js"
   ]
 }
