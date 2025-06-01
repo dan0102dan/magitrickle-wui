@@ -7,16 +7,16 @@ import {
     Center,
     Badge,
     Group,
-    // SimpleGrid,
-    // Card,
+    SimpleGrid,
+    Card,
 } from '@mantine/core'
 import {
     IconArrowRight,
     IconBrandTelegram,
     IconBrandGithub,
-    // IconCookie,
-    // IconGauge,
-    // IconUser
+    IconCookie,
+    IconGauge,
+    IconUser
 } from '@tabler/icons-react'
 import { NetworkBackground } from '../components'
 import { useLang } from '../contexts'
@@ -36,7 +36,7 @@ const About: React.FC = () => {
                         <Title ta='center'>
                             {t('pages.About.project') + ' '}
                             <Text component="span" c="blue" inherit>
-                                «Квас WUI»
+                                «Magitrickle WUI»
                             </Text>
                         </Title>
                     </Center>
@@ -56,11 +56,11 @@ const About: React.FC = () => {
                             leftSection={<IconBrandTelegram size={20} />}
                             rightSection={<IconArrowRight size={14} />}
                             component="a"
-                            href="https://t.me/+q_2_dYFnm3cyNjUy"
+                            href="https://t.me/MagiTrickleChat"
                             target="_blank"
                             size='md'
                         >
-                            {t('pages.About.tgChannel')}
+                            {t('pages.About.tgChat')}
                         </Button>
 
                         <Button
@@ -69,7 +69,7 @@ const About: React.FC = () => {
                             leftSection={<IconBrandGithub size={20} />}
                             rightSection={<IconArrowRight size={14} />}
                             component="a"
-                            href="https://github.com/dan0102dan/kvas-wui"
+                            href="https://github.com/dan0102dan/magitrickle-wui"
                             target="_blank"
                             size='md'
                         >
@@ -85,7 +85,7 @@ const About: React.FC = () => {
                 </Group>
             </Flex>
 
-            {/* <Container size="lg" pb="xl">
+            <Container size="lg" pb="xl">
                 <Title order={2} ta="center" mt="sm">
                     {t('pages.About.whyUs')}
                 </Title>
@@ -126,7 +126,7 @@ const About: React.FC = () => {
                         </Card>
                     ))}
                 </SimpleGrid>
-            </Container> */}
+            </Container>
             {/* Фоновый компонент */}
             <NetworkBackground
                 numberOfNodes={30}

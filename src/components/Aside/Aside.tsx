@@ -16,38 +16,38 @@ import { IconRefresh, IconRocket } from '@tabler/icons-react'
 import packageJson from '../../../package.json'
 import { useLang, availableTranslations, Lang } from '../../contexts'
 import { getLatestReleaseVersion } from '../../api/githubApi'
-import { update } from '../../api/routerApi'
+// import { update } from '../../api/routerApi'
 
 const AsidePanel: React.FC = () => {
     const { t, setLang, lang } = useLang()
     const { colorScheme, setColorScheme } = useMantineColorScheme()
     const [latestVersion, setLatestVersion] = useState<string | null>(null)
-    const [isUpdating, setIsUpdating] = useState(false)
+    // const [isUpdating, setIsUpdating] = useState(false)
 
-    const handleUpdate = async () => {
-        setIsUpdating(true)
-        try {
-            await update()
+    // const handleUpdate = async () => {
+    //     setIsUpdating(true)
+    //     try {
+    //         await update()
 
-            showNotification({
-                title: t('settings.update.started'),
-                message: t('settings.update.warning'),
-                color: 'blue'
-            })
+    //         showNotification({
+    //             title: t('settings.update.started'),
+    //             message: t('settings.update.warning'),
+    //             color: 'blue'
+    //         })
 
-            setTimeout(() => {
-                window.location.reload()
-            }, 15000)
-        } catch (err) {
-            setIsUpdating(false)
-            showNotification({
-                title: t('settings.update.error'),
-                message: (err as Error).message,
-                color: 'red',
-                autoClose: 5000
-            })
-        }
-    }
+    //         setTimeout(() => {
+    //             window.location.reload()
+    //         }, 15000)
+    //     } catch (err) {
+    //         setIsUpdating(false)
+    //         showNotification({
+    //             title: t('settings.update.error'),
+    //             message: (err as Error).message,
+    //             color: 'red',
+    //             autoClose: 5000
+    //         })
+    //     }
+    // }
 
     useEffect(() => {
         getLatestReleaseVersion('dan0102dan', 'kvas-wui')
@@ -87,18 +87,6 @@ const AsidePanel: React.FC = () => {
                         >
                             {t('settings.update.available')} (v{latestVersion})
                         </Text>
-
-                        <Button
-                            size="compact-sm"
-                            variant="light"
-                            color="blue"
-                            fullWidth
-                            leftSection={<IconRefresh size={16} />}
-                            onClick={handleUpdate}
-                            loading={isUpdating}
-                        >
-                            {t('settings.update.install')}
-                        </Button>
                     </Group>
                 )}
             </Flex>
