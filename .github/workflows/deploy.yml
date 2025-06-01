@@ -8,9 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./client
 
     steps:
       - name: Checkout repository
@@ -21,12 +18,12 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: './client/package-lock.json'
+          cache-dependency-path: 'package-lock.json'
 
       - name: Modify configuration
         run: |
-          sed -i 's/BrowserRouter/HashRouter/' src/index.tsx
-          sed -i 's|"homepage": ".*"|"homepage": "https://dan0102dan.github.io/kvas-wui"|' package.json
+          sed -i 's|<Navigate to="/groupList" replace />|<Navigate to="/about" replace />|' src/routes.tsx
+          sed -i 's|"homepage": ".*"|"homepage": "https://dan0102dan.github.io/magitrickle-wui"|' package.json
 
       - name: Install dependencies
         run: npm ci
@@ -38,5 +35,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./client/build
+          publish_dir: build
           keep_files: false

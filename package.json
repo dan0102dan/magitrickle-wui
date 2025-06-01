@@ -1,0 +1,54 @@
+{
+  "name": "magitrickle-wui",
+  "author": "dan0102dan",
+  "version": "2.0.0",
+  "homepage": "./",
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@mantine/carousel": "^8.0.2",
+    "@mantine/charts": "^8.0.2",
+    "@mantine/core": "^8.0.2",
+    "@mantine/form": "^8.0.2",
+    "@mantine/hooks": "^8.0.2",
+    "@mantine/notifications": "^8.0.2",
+    "@tabler/icons-react": "^3.33.0",
+    "axios": "^1.9.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.1",
+    "react-scripts": "5.0.1",
+    "react-window": "^1.8.11"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@types/react-window": "^1.8.8"
+  }
+}
