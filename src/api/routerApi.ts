@@ -13,7 +13,7 @@ export const getGroups = async (): Promise<Group[]> => (
 )
 
 export const saveGroups = async (groups: Group[]): Promise<Group[]> => (
-    (await apiClient.put('/groups', groups, { params: { save: true } })).data
+    (await apiClient.put('/groups', { groups }, { params: { save: true } })).data.groups
 )
 
 export const getInterfaces = async (): Promise<Interface[]> => (
