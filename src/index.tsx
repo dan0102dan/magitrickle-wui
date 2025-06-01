@@ -5,14 +5,14 @@ import '@mantine/charts/styles.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
 import { routes } from './routes'
 import { LangProvider } from './contexts'
 import { MantineProvider } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <App />,
