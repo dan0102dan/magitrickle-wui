@@ -108,6 +108,12 @@
             },
             "deleteSelected": "Delete selected"
         },
+        "GroupList": {
+            "_": "Groups",
+            "title": "Groups",
+            "newGroup": "New group",
+            "save": "Save"
+        },
         "Tunnel": {
             "_": "Connections",
             "description": "Below are all the services that take part in Kvas operation",
