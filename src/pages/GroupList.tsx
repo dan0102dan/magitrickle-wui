@@ -7,6 +7,7 @@ import { nanoid } from 'nanoid'
 import { getGroups, saveGroups, getInterfaces } from '../api/routerApi'
 import { GroupCard } from '../components'
 import type { Group, Rule, Interface } from '../api/types'
+import { useLang } from '../contexts'
 
 const MOBILE_BREAKPOINT = 800
 
@@ -28,6 +29,7 @@ const createRule = (): Rule => ({
 
 const GroupList: React.FC = () => {
     const ifaceOpts = useIfaceOpts()
+    const { t } = useLang()
     const isMobile = useMediaQuery(`(max-width: ${MOBILE_BREAKPOINT}px)`)
     const [original, setOriginal] = useState<Group[]>([])
     const [groups, setGroups] = useState<Group[]>([])
@@ -69,8 +71,12 @@ const GroupList: React.FC = () => {
     const addGroup = () => {
         const id = nanoid()
         const g: Group = {
-            id, name: 'New group', color: '#228be6', interface: ifaceOpts[0]?.value ?? '',
-            enable: true, rules: [],
+            id,
+            name: t('pages.GroupList.newGroup'),
+            color: '#228be6',
+            interface: ifaceOpts[0]?.value ?? '',
+            enable: true,
+            rules: [],
         }
         setGroups(prev => [g, ...prev])
         setOpenMap(o => ({ ...o, [id]: true }))
@@ -98,16 +104,16 @@ const GroupList: React.FC = () => {
     return (
         <Container py="lg" size="md">
             <MGroup justify="space-between" mb="md" wrap="nowrap">
-                <Title order={2}>Groups</Title>
+                <Title order={2}>{t('pages.GroupList.title')}</Title>
                 <MGroup gap="xs">
                     <Button variant="outline" leftSection={<IconPlus size={16} />} onClick={addGroup}>
-                        New&nbsp;group
+                        {t('pages.GroupList.newGroup')}
                     </Button>
                     <Button leftSection={<IconDeviceFloppy size={16} />}
                         disabled={!dirty || saving}
                         loading={saving}
                         onClick={handleSave}>
-                        Save
+                        {t('pages.GroupList.save')}
                     </Button>
                 </MGroup>
             </MGroup>
