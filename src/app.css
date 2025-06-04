@@ -1,0 +1,92 @@
+:root {
+  --bg-light: #20202c;
+  --bg-dark: #14151e;
+  --bg-dark-extra: #101018;
+  --bg-medium: #1a1a24;
+  --bg-light-extra: #282a39;
+  --text: #fff;
+  --text-2: #aaaaaa;
+  --border-light: #292b3b;
+  --violet: #9047fe;
+  --violet-dark: #4933c2;
+  --violet-light: #ae81ff;
+  --red-dark: #ad1010;
+  --red-orange: #f85212;
+  --red: #f85149;
+  --lime: #6dd919;
+  --green: #3fb950;
+  --green-dark: #105a18;
+  --green-vibrant: #00f593;
+  --blue: #559eff;
+  --blue-light: #2392cc;
+  --blue-light-extra: #42bdf9;
+  --electric-blue: #007bff;
+  --yellow: #fc0;
+  --yellow-bright: #ffd37a;
+  --grey-dark: #75715e;
+  --pink: #f92672;
+  --green-light: #a9f513ee;
+  --orange: #fd971f;
+  --grey: #cfcfc2;
+  --none: #0000;
+  --black: #000;
+
+  --font-size-base: 1rem;
+  --font: "Overpass", Arial, Helvetica, sans-serif;
+  --font-mono: Monaco, monospace;
+
+  --accent: #42bdf9;
+  --shadow-popover: 0px 0px 10px 1px var(--bg-dark-extra);
+}
+
+html {
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--font-size-base);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: overlay;
+  scrollbar-gutter: stable both-edges;
+}
+
+body {
+  background-color: var(--bg-dark);
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 0.5rem;
+}
+*::-webkit-scrollbar-track {
+  user-select: none;
+  touch-action: none;
+  display: flex;
+  background-color: transparent;
+  width: 0.2rem;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  transition: all 0.3 ease-in-out;
+}
+*::-webkit-scrollbar-track:hover {
+  background-color: var(--bg-medium);
+}
+*::-webkit-scrollbar-thumb {
+  flex: 1;
+  position: relative;
+  opacity: 0.6;
+  background-color: var(--bg-light);
+  border-radius: 0.5rem;
+  border: 1px solid var(--bg-light-extra);
+  transition: all 0.3 ease-in-out;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bg-light-extra);
+}
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--bg-light-extra);
+}
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
